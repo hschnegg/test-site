@@ -1,4 +1,8 @@
-(ns test-site.core
+(ns ^{:doc "Test site used for testing data products"
+      :author "Herve Schnegg"}
+
+  test-site.core
+
   (:require [io.pedestal.http :as http]
             [io.pedestal.http.route :as route]
             [hiccup.page :as page]))
@@ -7,7 +11,10 @@
 (defn test-page [request]
   {:status 200
    :headers {"Content-Type" "text/html"}
-   :body (page/html5 [:body [:p [:b "Hello from Hiccup"]]])})
+   :body (page/html5
+          [:body
+           [:div
+            [:iframe {:src "http://www.google.com"}]]])})
 
 
 (def routes
