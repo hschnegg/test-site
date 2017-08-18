@@ -58,3 +58,5 @@
     
 
 (def res (retrieve-page 1 "technology/artificialintelligenceai" "2017-06-01"))
+
+((first (((first (res "results")) "blocks") "body")) "bodyHtml")
